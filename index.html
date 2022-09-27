@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<header>
+    <h1>Proyecto CRUD</h1>
+</header>
+
+<body>
+    <div class="encabezado">
+        <div class="encabezado_uno">
+            <h3 id="logo">Super Ahorro</h3>
+            <input id="buscador" type="text" placeholder="Busca un articulo">
+        </div>
+        <div class="encabezado_dos">
+            <span>Departamentos</span>
+            <span>Cupones</span>
+            <span>Promociones</span>
+            <span>Servicios</span>
+            <span>Proveedores</span>
+            <span>Inicia Sesión</span>
+        </div>
+    </div>
+    <div class="encabezado" style="background-color: #81c9fa;">
+        <div class="cuerpo">
+            <h2>Empleados</h2>
+        </div>
+        <div class="cuerpo_dos">
+            <section>
+                <label for="ID"># de Empleado:</label><br>
+                <input type="number" name="idnum" id="idnum" placeholder="# ID" style="border-radius: 10px;">
+            </section>
+            <section>
+                <label for="fname">Primer Nombre:</label><br>
+                <input type="text" name="fname" id="fname" placeholder="Primer Nombre" style="border-radius: 10px;">
+            </section>
+            <section>
+                <label for="sname">Segundo Nombre:</label><br>
+                <input type="text" name="sname" id="sname" placeholder="Segundo Nombre" style="border-radius: 10px;">
+            </section>
+            <section>
+                <label for="slname">Apellido Paterno:</label><br>
+                <input type="text" name="lame" id="lname" placeholder="Apellido Paterno" style="border-radius: 10px;">
+            </section>
+            <section>
+                <label for="slname">Apellido Materno:</label><br>
+                <input type="text" name="slname" id="slname" placeholder="Segundo Apellido"
+                    style="border-radius: 10px;">
+            </section>
+        </div>
+        <div class="cuerpo_dos" style="padding: 50px ;">
+            <section>
+                <label for="email"> Correo Electronico:</label>
+                <input type="email" name="email" id="email" placeholder="Email@email.com" style="border-radius: 10px;">
+                <!-- @
+                <select name="demail" id="demail">
+                    <option value="hotmail">hotmail.com</option>
+                    <option value="gmail">gmail.com</option>
+                    <option value="yahoo">yahoo.com</option>
+                </select> -->
+            </section>
+            <section>
+                <label for="dob">Fecha de nacimiento:</label>
+                <input type="date" name="dob" id="dob" style="border-radius: 10px;">
+            </section>
+        </div>
+        <div class="cuerpo_dos" style="padding-bottom: 50px; justify-content: center;">
+            <button id="crear" style="margin-right: 50px;">Ingresar</button>
+            <button onclick="clearMemory()">Limpiar</button>
+        </div>
+
+        <!-- </div>
+            <div class="cuerpo_dos" style="background-color: #81c9fa;">
+                <form action="" style="display: ;">
+                    <label for="ID"># de Empleado</label>
+                    <input type="number" name="idnum" id="idnum" placeholder="# ID">
+                </form>
+                <form action="">
+                    <label for="fname">Primer Nombre:</label>
+                    <input type="text" name="fname" id="fname" placeholder="Primer Nombre">
+                </form>
+                <form action="">
+                    <label for="sname">Segundo Nombre:</label>
+                    <input type="text" name="sname" id="sname" placeholder="Segundo Nombre">
+                </form>
+                <form action="">
+                    <label for="slname">Apellido Paterno</label>
+                    <input type="text" name="lame" id="lname" placeholder="Apellido Paterno">
+                </form>
+                <form action="">
+                    <label for="slname">Apellido Materno</label>
+                    <input type="text" name="slname" id="slname" placeholder="Segundo Apellido">
+                </form>
+            </div>
+            <div>
+                <form action="">
+                    <label for="email"> Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </form>
+                <form action=""></form>
+                <form action=""></form>
+                <form action=""></form>
+            </div>-->
+
+
+    </div>
+    <div class="encabezado" style="background-color: #2196f3;">
+        <table border="1" class="cuerpo_dos" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>#ID</th>
+                    <th>Nombre</th>
+                    <th>Correo Electronico</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script type="text/javascript" src="./proyecto.js"></script>
+</body>
+
+</html>
