@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./Images/MicrosoftTeams-image5749a318a70b63f028101d85719dcd7972fa4a4f8a1a09f039471931bb2c04f0.png">
     <title>Document</title>
-</head>
+</head >
 <header>
     <h1>Proyecto CRUD</h1>
 </header>
@@ -45,8 +46,8 @@
                 <input type="text" name="sname" id="sname" placeholder="Segundo Nombre" style="border-radius: 10px;">
             </section>
             <section>
-                <label for="slname">Apellido Paterno:</label><br>
-                <input type="text" name="lame" id="lname" placeholder="Apellido Paterno" style="border-radius: 10px;">
+                <label for="lname">Apellido Paterno:</label><br>
+                <input type="text" name="lname" id="lname" placeholder="Apellido Paterno" style="border-radius: 10px;">
             </section>
             <section>
                 <label for="slname">Apellido Materno:</label><br>
@@ -58,60 +59,20 @@
             <section>
                 <label for="email"> Correo Electronico:</label>
                 <input type="email" name="email" id="email" placeholder="Email@email.com" style="border-radius: 10px;">
-                <!-- @
-                <select name="demail" id="demail">
-                    <option value="hotmail">hotmail.com</option>
-                    <option value="gmail">gmail.com</option>
-                    <option value="yahoo">yahoo.com</option>
-                </select> -->
             </section>
             <section>
                 <label for="dob">Fecha de nacimiento:</label>
                 <input type="date" name="dob" id="dob" style="border-radius: 10px;">
             </section>
         </div>
-        <div class="cuerpo_dos" style="padding-bottom: 50px; justify-content: center;">
+        <div class="cuerpo_dos" style="padding-bottom: 50px; justify-content: center;" id="botones">
             <button id="crear" style="margin-right: 50px;">Ingresar</button>
-            <button onclick="clearMemory()">Limpiar</button>
+            <button onclick="clearMemory(), showList()">Limpiar</button>
         </div>
-
-        <!-- </div>
-            <div class="cuerpo_dos" style="background-color: #81c9fa;">
-                <form action="" style="display: ;">
-                    <label for="ID"># de Empleado</label>
-                    <input type="number" name="idnum" id="idnum" placeholder="# ID">
-                </form>
-                <form action="">
-                    <label for="fname">Primer Nombre:</label>
-                    <input type="text" name="fname" id="fname" placeholder="Primer Nombre">
-                </form>
-                <form action="">
-                    <label for="sname">Segundo Nombre:</label>
-                    <input type="text" name="sname" id="sname" placeholder="Segundo Nombre">
-                </form>
-                <form action="">
-                    <label for="slname">Apellido Paterno</label>
-                    <input type="text" name="lame" id="lname" placeholder="Apellido Paterno">
-                </form>
-                <form action="">
-                    <label for="slname">Apellido Materno</label>
-                    <input type="text" name="slname" id="slname" placeholder="Segundo Apellido">
-                </form>
-            </div>
-            <div>
-                <form action="">
-                    <label for="email"> Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
-                </form>
-                <form action=""></form>
-                <form action=""></form>
-                <form action=""></form>
-            </div>-->
-
 
     </div>
     <div class="encabezado" style="background-color: #2196f3;">
-        <table border="1" class="cuerpo_dos" >
+        <table border="1">
             <thead>
                 <tr>
                     <th>#</th>
@@ -119,9 +80,14 @@
                     <th>Nombre</th>
                     <th>Correo Electronico</th>
                     <th>Fecha de nacimiento</th>
+                    <th>Edad</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr><td>1</td><td>2</td><td>3</td><td></td><td>4</td><td>5</td>
+                <td><button>Eliminar</button> <button>Editar</button></td></tr>
+            </tbody>
         </table>
     </div>
     <script type="text/javascript" src="./proyecto.js"></script>
