@@ -71,8 +71,6 @@ const editar = (index) => {
 
     document.getElementById(`Button${index}`).disabled = false
     document.getElementById(`editar${index}`).disabled = true
-    console.log('Editar ' + index)
-
 }
 
 const actualizar = (index) => {
@@ -81,7 +79,6 @@ const actualizar = (index) => {
     let nombre = ''
     list = JSON.parse(localStorage.getItem('listOp'));
     list_dos = JSON.parse(localStorage.getItem('listOp_dos'));
-    document.getElementsByTagName('tbody'[0].innerHTML);
     if (sname.value === null || '') {
         if (slname.value === null || '') {
             nombre = `${fname.value} ${lname.value}`;
@@ -115,6 +112,7 @@ const actualizar = (index) => {
     list.splice(index,1,obj)
     localStorage.setItem('listOp', JSON.stringify(list));
     showList()
+    borrar()
 }
 
 const getEdad = (fecha) => {
