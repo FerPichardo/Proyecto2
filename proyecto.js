@@ -51,7 +51,7 @@ const eliminar = (index) => {
     let lista = JSON.parse(localStorage.getItem('listOp'));
     console.log(lista);
     document.getElementsByTagName('tbody')[0].innerHTML = '';
-    lista.splice(index,1)
+    lista.splice(index, 1)
     localStorage.setItem('listOp', JSON.stringify(lista));
     showList()
     console.log('Eliminar ' + index)
@@ -68,16 +68,53 @@ const editar = (index) => {
     slname.value = lista[index].sapellido
     email.value = lista[index].correo
     dob.value = lista[index].fecha
-    
+
     document.getElementById(`Button${index}`).disabled = false
     document.getElementById(`editar${index}`).disabled = true
     console.log('Editar ' + index)
 
 }
 
-const actualizar = (index) =>{
-    let lista = JSON.parse(localStorage.getItem('listOp_dos'));
+const actualizar = (index) => {
+    let list = []
+    let list_dos = []
+    let nombre = ''
+    list = JSON.parse(localStorage.getItem('listOp'));
+    list_dos = JSON.parse(localStorage.getItem('listOp_dos'));
     document.getElementsByTagName('tbody'[0].innerHTML);
+    if (sname.value === null || '') {
+        if (slname.value === null || '') {
+            nombre = `${fname.value} ${lname.value}`;
+        } else {
+            nombre = `${fname.value} ${lname.value} ${slname.value}`;
+        }
+    } else if (slname.value === null || '') {
+        nombre = `${fname.value} ${sname.value} ${lname.value}`
+    } else {
+        nombre = `${fname.value} ${sname.value} ${lname.value} ${slname.value}`;
+    }
+    let obj = {
+        Nombre: nombre,
+        Edad: getEdad(dob.value),
+        Correo: email.value,
+        Numero: idnum.value,
+        Fnacimiento: dob.value
+    }
+    let obj_dos = {
+        num: idnum.value,
+        pnombre: fname.value,
+        snombre: sname.value,
+        papellido: lname.value,
+        sapellido: slname.value,
+        correo: email.value,
+        fecha: dob.value
+    }
+    list_dos.splice(index,1,obj_dos)
+    localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
+    // console.log(fecha)
+    list.splice(index,1,obj)
+    localStorage.setItem('listOp', JSON.stringify(list));
+    showList()
 }
 
 const getEdad = (fecha) => {
@@ -90,6 +127,7 @@ const getEdad = (fecha) => {
     }
     return edad
 }
+
 crear.addEventListener("click", () => {
     let list = []
     let list_dos = []
@@ -114,8 +152,8 @@ crear.addEventListener("click", () => {
         nombre = `${fname.value} ${sname.value} ${lname.value} ${slname.value}`;
     }
 
-//     // let fecha = new Date(Date.utc(dob.value)).toLocaleDateString('es-MX')    
-// fecha = Date(dob.value)
+    //     // let fecha = new Date(Date.utc(dob.value)).toLocaleDateString('es-MX')    
+    // fecha = Date(dob.value)
     let obj = {
         Nombre: nombre,
         Edad: getEdad(dob.value),
@@ -124,13 +162,13 @@ crear.addEventListener("click", () => {
         Fnacimiento: dob.value
     }
     let obj_dos = {
-        num: idnum.value ,
-        pnombre: fname.value ,
-        snombre: sname.value ,
-        papellido: lname.value ,
-        sapellido: slname.value ,
-        correo: email.value ,
-        fecha: dob.value 
+        num: idnum.value,
+        pnombre: fname.value,
+        snombre: sname.value,
+        papellido: lname.value,
+        sapellido: slname.value,
+        correo: email.value,
+        fecha: dob.value
     }
     list_dos.push(obj_dos)
     localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
