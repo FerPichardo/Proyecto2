@@ -24,7 +24,7 @@ const clearMemory = () => {
 }
 
 const showList = () => {
-    let listTable = JSON.parse(localStorage.getItem('listOp'));
+    let listTable = JSON.parse(localStorage.getItem('listOp_dos'));
     // console.log(listTable)
     document.getElementsByTagName('tbody')[0].innerHTML = '';
     if (listTable !== null) {
@@ -32,11 +32,11 @@ const showList = () => {
             let rowTable = document.createElement('tr');
             rowTable.innerHTML = `
                     <td>${index + 1}</td>
-                    <td>${element.Numero}</td>
-                    <td>${element.Nombre}</td>
-                    <td>${element.Correo}</td>
-                    <td>${element.Fnacimiento}</td>
-                    <td>${element.Edad}</td>
+                    <td>${element.num}</td>
+                    <td>${element.ncompleto}</td>
+                    <td>${element.correo}</td>
+                    <td>${element.fecha}</td>
+                    <td>${element.edad}</td>
                     <td>
                     <button onclick="editar(${index})" id= "editar${index}">Editar</button>
                     <button onclick="eliminar(${index})">Eliminar</button>
@@ -84,13 +84,6 @@ const actualizar = (index) => {
     } else {
         nombre = `${fname.value} ${sname.value} ${lname.value} ${slname.value}`;
     }
-    let obj = {
-        Nombre: nombre,
-        Edad: getEdad(dob.value),
-        Correo: email.value,
-        Numero: idnum.value,
-        Fnacimiento: dob.value
-    }
     let obj_dos = {
         num: idnum.value,
         pnombre: fname.value,
@@ -98,13 +91,13 @@ const actualizar = (index) => {
         papellido: lname.value,
         sapellido: slname.value,
         correo: email.value,
-        fecha: dob.value
+        fecha: dob.value,
+        ncompleto: nombre,
+        edad: getEdad(dob.value)
     }
     list_dos.splice(index,1,obj_dos)
     localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
     // console.log(fecha)
-    list.splice(index,1,obj)
-    localStorage.setItem('listOp', JSON.stringify(list));
     showList()
     borrar()
 }
@@ -124,7 +117,6 @@ crear.addEventListener("click", () => {
     let list = []
     let list_dos = []
     let nombre = ''
-    list = JSON.parse(localStorage.getItem('listOp'));
     list_dos = JSON.parse(localStorage.getItem('listOp_dos'));
     if (list === null) {
         list = [];
@@ -146,13 +138,7 @@ crear.addEventListener("click", () => {
 
     //     // let fecha = new Date(Date.utc(dob.value)).toLocaleDateString('es-MX')    
     // fecha = Date(dob.value)
-    let obj = {
-        Nombre: nombre,
-        Edad: getEdad(dob.value),
-        Correo: email.value,
-        Numero: idnum.value,
-        Fnacimiento: dob.value
-    }
+
     let obj_dos = {
         num: idnum.value,
         pnombre: fname.value,
@@ -160,13 +146,13 @@ crear.addEventListener("click", () => {
         papellido: lname.value,
         sapellido: slname.value,
         correo: email.value,
-        fecha: dob.value
+        fecha: dob.value,
+        ncompleto: nombre,
+        edad: getEdad(dob.value)
     }
     list_dos.push(obj_dos)
     localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
     // console.log(fecha)
-    list.push(obj)
-    localStorage.setItem('listOp', JSON.stringify(list));
     showList()
     borrar()
 })
