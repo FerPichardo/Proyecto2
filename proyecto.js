@@ -51,13 +51,10 @@ const eliminar = (index) => {
     let lista = JSON.parse(localStorage.getItem('listOp'));
     lista.splice(index, 1)
     localStorage.setItem('listOp', JSON.stringify(lista));
-    showList()
-    console.log('Eliminar ' + index)
-}
+    showList()}
 
 const editar = (index) => {
     let lista = JSON.parse(localStorage.getItem('listOp_dos'));
-    document.getElementsByTagName('tbody'[0].innerHTML);
     idnum.value = lista[index].num
     fname.value = lista[index].pnombre
     sname.value = lista[index].snombre
