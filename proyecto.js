@@ -25,7 +25,6 @@ const clearMemory = () => {
 
 const showList = () => {
     let listTable = JSON.parse(localStorage.getItem('listOp_dos'));
-    // console.log(listTable)
     document.getElementsByTagName('tbody')[0].innerHTML = '';
     if (listTable !== null) {
         listTable.forEach((element, index) => {
@@ -97,7 +96,6 @@ const actualizar = (index) => {
     }
     list_dos.splice(index,1,obj_dos)
     localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
-    // console.log(fecha)
     showList()
     borrar()
 }
@@ -152,7 +150,6 @@ crear.addEventListener("click", () => {
     }
     list_dos.push(obj_dos)
     localStorage.setItem('listOp_dos', JSON.stringify(list_dos))
-    // console.log(fecha)
     showList()
     borrar()
 })
