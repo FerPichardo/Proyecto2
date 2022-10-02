@@ -35,7 +35,7 @@ body{
     width: 800px;
     height: 20px;
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 20px;
     align-items: center;
 }
 #logo{
@@ -78,4 +78,22 @@ div>span:hover {
     #formulario{
         display: grid;
     }
+    #buscador{
+        width: 400px;
+    }
+}
+@media (max-width: 1080px) {
+    #buscador{
+        width: 400px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 700px){
+    #buscador{
+        width: 200px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 550){
+
 }
