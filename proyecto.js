@@ -47,9 +47,9 @@ const showList = () => {
 }
 
 const eliminar = (index) => {
-    let lista = JSON.parse(localStorage.getItem('listOp'));
+    let lista = JSON.parse(localStorage.getItem('listOp_dos'));
     lista.splice(index, 1)
-    localStorage.setItem('listOp', JSON.stringify(lista));
+    localStorage.setItem('listOp_dos', JSON.stringify(lista));
     showList()}
 
 const editar = (index) => {
@@ -70,7 +70,6 @@ const actualizar = (index) => {
     let list = []
     let list_dos = []
     let nombre = ''
-    list = JSON.parse(localStorage.getItem('listOp'));
     list_dos = JSON.parse(localStorage.getItem('listOp_dos'));
     if (sname.value === null || '') {
         if (slname.value === null || '') {

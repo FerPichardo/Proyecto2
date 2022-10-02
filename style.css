@@ -74,3 +74,8 @@ div>span:hover {
     align-items: center;
     justify-content: space-around;
 }
+@media (max-width: 950px){
+    #formulario{
+        display: grid;
+    }
+}
